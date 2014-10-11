@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :games, only: [:create, :update]
 
-  resources :users, only: :index
+  resources :users, only: [:index, :show]
 end

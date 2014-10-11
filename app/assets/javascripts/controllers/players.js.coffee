@@ -1,5 +1,5 @@
 class PlayersCtrl
-  constructor: (@$scope, @User) ->
+  constructor: (@$scope, @$location, @User) ->
     @all = @User.query()
     @players = []
 
@@ -12,7 +12,7 @@ class PlayersCtrl
     @gameReady = (@players.length == 2)
 
   startGame: ->
-    
+    @$location.path("/play/#{@players[0].id}/#{@players[1].id}")
 
 angular.module("pingPongControllers")
-  .controller("PlayersCtrl", ["$scope", "User", PlayersCtrl])
+  .controller("PlayersCtrl", ["$scope", "$location", "User", PlayersCtrl])

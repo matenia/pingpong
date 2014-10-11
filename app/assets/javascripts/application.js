@@ -12,6 +12,7 @@
 //
 //= require angular
 //= require angular-resource
+//= require angular-route
 //= require angular-websocket
 //= require pingpong
 //= require_tree .
