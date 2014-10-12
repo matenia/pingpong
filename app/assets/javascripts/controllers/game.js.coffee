@@ -26,7 +26,7 @@ class PlayCtrl
 
     if @isGameOver()
       @trackGame()
-      alert("Game won by #{@winner().email}")
+      alert("Game won by #{@winner().name}")
       @$location.path("/")
 
   winner: ->

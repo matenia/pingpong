@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 20141011071500) do
   end
 
   create_table "games", force: true do |t|
-    t.integer  "series_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: true do |t|
-    t.string   "email"
+    t.string   "name"
+    t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
