@@ -2,6 +2,7 @@
 
 # add modules defined in other filters to this array:
 dependencies = [
+  "pingPongDirectives",
   "pingPongServices",
   "pingPongControllers"
 ]

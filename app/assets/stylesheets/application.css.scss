@@ -3,3 +3,64 @@
 @import "bootstrap";
 
 @import "bootswatch/cerulean/bootswatch";
+
+.ping-pong {
+  text-align: center;
+  .game {
+    .player1, .player2 {
+      cursor: pointer;
+      opacity: 1;
+      position: absolute;
+      top: 25%;
+    }
+    .player1 {
+      left: 25%;
+    }
+    .player2 {
+      right: 25%;
+    }
+    .score {
+      font-size: 500%;
+      font-weight: bold;
+    }
+    .vs {
+      font-size: 200%;
+      left: 50%;
+      position: absolute;
+      top: 35%;
+    }
+  }
+
+  .player {
+    height: 200px;
+    width: 150px;
+
+    .avatar {
+      border: 5px solid black;
+      border-radius: 150px;
+      height: 150px;
+      width: 150px;
+    }
+
+    .name {
+      text-align: center;
+    }
+  }
+  .players {
+    ul {
+      list-style-type: none;
+      margin-bottom: 50px;
+    }
+    li {
+      cursor: pointer;
+      display: inline-block;
+      margin: 20px;
+      .player {
+        opacity: 0.2;
+      }
+      &.selected .player, .player:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,12 +1,14 @@
-<div ng-controller="PlayCtrl as game">
-  <div ng-click="game.trackPoint(0)">
-    {{game.users[0].name}}
-    {{game.scores[0]}}
+<div ng-controller="PlayCtrl as game" class="game">
+  <div ng-click="game.trackPoint(0)" class="player1"">
+    <player player="game.users[0]"></player>
+    <div class="score">{{game.scores[0]}}</div>
   </div>
-  VS
-  <div ng-click="game.trackPoint(1)">
-    {{game.users[1].name}}
-    {{game.scores[1]}}
+
+  <div class="vs">VS</div>
+
+  <div ng-click="game.trackPoint(1)" class="player2">
+    <player player="game.users[1]"></player>
+    <div class="score">{{game.scores[1]}}</div>
   </div>
 </div>
 

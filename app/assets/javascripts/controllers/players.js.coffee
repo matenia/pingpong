@@ -7,7 +7,12 @@ class PlayersCtrl
     @players.indexOf(player) >= 0
 
   select: (player) ->
-    @players.push(player)
+    if @players.indexOf(player) >= 0
+      existing = @players.indexOf(player)
+      @players.splice(existing, 1)
+    else
+      @players.push(player)
+
     @players.shift() if @players.length > 2
     @gameReady = (@players.length == 2)
 
