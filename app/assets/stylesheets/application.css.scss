@@ -7,6 +7,10 @@
 .ping-pong {
   text-align: center;
   .game {
+    .game-over {
+      margin-top: 45%;
+      text-align: center;
+    }
     .player1, .player2 {
       cursor: pointer;
       opacity: 1;

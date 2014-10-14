@@ -25,9 +25,11 @@ class PlayCtrl
       @scores[user] += 1
 
     if @isGameOver()
+      @gameOver = true
       @trackGame()
-      alert("Game won by #{@winner().name}")
-      @$location.path("/")
+
+  finishGame: ->
+    @$location.path("/")
 
   winner: ->
     player = @scores.indexOf(@highestScore())

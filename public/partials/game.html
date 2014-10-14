@@ -10,5 +10,15 @@
     <player player="game.users[1]"></player>
     <div class="score">{{game.scores[1]}}</div>
   </div>
-</div>
 
+  <div class="game-over" ng-show="game.gameOver">
+    <p>
+      Game won by {{game.winner().name}}.
+    </p>
+
+    <button class="btn btn-default btn-lg"
+            ng-click="game.finishGame()">
+      Finish game
+    </button>
+  </div>
+</div>
