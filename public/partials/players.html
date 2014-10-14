@@ -2,7 +2,8 @@
   <ul>
     <li ng-repeat="player in players.all"
         ng-click="players.select(player)"
-        ng-class="{selected:players.isSelected(player)}">
+        ng-class="{selected:players.isSelected(player)}"
+        data-id="{{player.id}}">
       <player player="player"></player>
     </li>
   </ul>
