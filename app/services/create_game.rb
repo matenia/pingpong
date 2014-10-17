@@ -1,8 +1,8 @@
-class CreateGame < Struct.new(:scores)
+class CreateGame < Struct.new(:players)
   def call
     Game.new.tap do |game|
-      scores.each do |user_id, score|
-        game.game_scores << GameScore.new(user_id: user_id, score: score)
+      players.each do |player|
+        game.players << Player.new(user_id: player[:user][:id], score: player[:score])
       end
       game.save!
     end

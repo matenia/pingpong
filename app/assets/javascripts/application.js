@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require angular
+//= require moment
+//= require angular-moment
 //= require angular-resource
 //= require angular-route
 //= require angular-websocket

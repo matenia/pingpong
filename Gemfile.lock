@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 9360a10ce2238a285aa82609224d6a1cd5bd3355
+  specs:
+    active_model_serializers (0.10.0.pre)
+      activemodel (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -193,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   bootstrap-sass
   bootswatch-rails
   bower-rails

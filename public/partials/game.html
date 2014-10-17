@@ -1,21 +1,15 @@
-<div ng-controller="PlayCtrl as game" class="game">
+<div ng-controller="GameCtrl as game" class="game">
   <div ng-click="game.trackPoint(0)" class="player1"">
-    <player player="game.users[0]"></player>
-    <div class="score">{{game.scores[0]}}</div>
+    <player player="game.game.players[0]"></player>
   </div>
 
   <div class="vs">VS</div>
 
   <div ng-click="game.trackPoint(1)" class="player2">
-    <player player="game.users[1]"></player>
-    <div class="score">{{game.scores[1]}}</div>
+    <player player="game.game.players[1]"></player>
   </div>
 
   <div class="game-over" ng-show="game.gameOver">
-    <p>
-      Game won by {{game.winner().name}}.
-    </p>
-
     <button class="btn btn-default btn-lg"
             ng-click="game.finishGame()">
       Finish game

@@ -14,11 +14,12 @@ RSpec.describe "A single Game", js: true do
     expect(page).to have_content("VS")
 
     21.times { find(".player1").click }
-    expect(page).to have_content("Game won by #{user1.name}")
+    within(".player1") { expect(page).to have_content("Winner") }
+    within(".player2") { expect(page).to_not have_content("Winner") }
 
     game = Game.last
     expect(game).to_not be_nil
-    expect(game.game_scores.map(&:score).sort).to eql([0, 21])
+    expect(game.players.map(&:score).sort).to eql([0, 21])
   end
 
   def click_user(user)

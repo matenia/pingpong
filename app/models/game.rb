@@ -1,4 +1,4 @@
 class Game < ActiveRecord::Base
   belongs_to :series
-  has_many :game_scores
+  has_many :players
 end

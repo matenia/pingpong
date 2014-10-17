@@ -1,4 +1,6 @@
 asset 'angular'
+asset 'angular-moment'
 asset 'angular-resource'
 asset 'angular-route'
 asset 'angular-websocket'
+asset 'moment'

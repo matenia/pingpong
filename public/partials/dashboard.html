@@ -1,0 +1,14 @@
+<div ng-controller="DashboardCtrl as dashboard" class="dashboard">
+  <div class="game" ng-show="dashboard.game">
+    <h3 am-time-ago="dashboard.game.created_at"></h3>
+
+    <div ng-repeat="player in dashboard.game.players">
+      <div class="player{{$index + 1}}">
+        <player player="player"></player>
+      </div>
+      <div class="vs" ng-show="{{$first}}">
+        VS
+      </div>
+    </div>
+  </div>
+</div>

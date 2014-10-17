@@ -1,28 +1,23 @@
-class PlayCtrl
+class GameCtrl
   constructor: (@$scope, $routeParams, @$location, @User, @Game) ->
-    user1 = User.get(id: $routeParams.user1)
-    user2 = User.get(id: $routeParams.user2)
-    @users = [user1, user2]
-    @scores = [0, 0]
+    @game = new @Game(players: [])
+    @game.players.push(score: 0, user: @User.get(id: $routeParams.user1))
+    @game.players.push(score: 0, user: @User.get(id: $routeParams.user2))
 
   highestScore: ->
-    Math.max.apply(null, @scores)
+    Math.max(@game.players[0].score, @game.players[1].score)
 
   isGameOver: ->
-    diff = Math.abs(@scores[0] - @scores[1])
+    diff = Math.abs(@game.players[0].score - @game.players[1].score)
     max = @highestScore()
     (max == 21 && diff > 2) || (max > 21 && diff == 2)
 
   trackGame: ->
-    game = new @Game()
-    game.scores = {}
-    game.scores[@users[0].id] = @scores[0]
-    game.scores[@users[1].id] = @scores[1]
-    game.$save()
+    @game.$save()
 
-  trackPoint: (user) ->
-    if user == 0 || user == 1
-      @scores[user] += 1
+  trackPoint: (player) ->
+    if player == 0 || player == 1
+      @game.players[player].score += 1
 
     if @isGameOver()
       @gameOver = true
@@ -32,10 +27,11 @@ class PlayCtrl
     @$location.path("/")
 
   winner: ->
-    player = @scores.indexOf(@highestScore())
-    @users[player]
+    highest = @highestScore()
+    if @game.players[0].score == highest
+      @game.players[0].user
+    else if @game.players[1].score == highest
+      @game.players[1].user
 
-
-
-angular.module("pingPongControllers").controller("PlayCtrl",
-  ["$scope", "$routeParams", "$location", "User", "Game", PlayCtrl])
+angular.module("pingPongControllers").controller("GameCtrl",
+  ["$scope", "$routeParams", "$location", "User", "Game", GameCtrl])

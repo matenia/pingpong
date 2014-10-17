@@ -1,4 +1,9 @@
 <div class="player">
-  <img class="avatar" ng-src="{{player.image_url}}" />
-  <div class="name">{{player.name}}</name>
+  <img class="avatar" ng-src="{{player.user.image_url}}" />
+  <div class="name">{{player.user.name}}</name>
+  <div class="score">{{player.score}}</div>
+
+  <div class="winner" ng-show="player.winner">
+    Winner!
+  </div>
 </div>

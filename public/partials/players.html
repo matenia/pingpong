@@ -4,7 +4,7 @@
         ng-click="players.select(player)"
         ng-class="{selected:players.isSelected(player)}"
         data-id="{{player.id}}">
-      <player player="player"></player>
+      <player player="{ user: player }"></player>
     </li>
   </ul>
 
