@@ -36,6 +36,7 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'bower-rails'
+gem 'puma'
 gem 'tubesock'
 
 group :development, :test do
